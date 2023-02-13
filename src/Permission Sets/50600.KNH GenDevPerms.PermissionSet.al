@@ -9,7 +9,7 @@ permissionset 50600 "KNH _GenDev_Perms"
         codeunit "KNH Variant Test" = X,
         codeunit "KNH Copy Test" = X,
         codeunit "KNH Conditional Selection" = X,
-        codeunit "KNH Case Selection" = X,
+        codeunit "KNH Selection" = X,
         codeunit "KNH Overloads" = X,
         codeunit "KNH Loop Variations" = X,
         codeunit "KNH List" = X,
