@@ -7,7 +7,6 @@ codeunit 50606 "KNH List"
         Names: List of [Text];
 
     trigger OnRun()
-
     begin
         //List
         Names.Insert(1, 'James');
@@ -36,10 +35,9 @@ codeunit 50606 "KNH List"
     /// </summary>
     /// <returns>Return value of type Integer</returns>
     local procedure NumberCount()
-    Var
+    var
         I: Integer;
         Total: array[1000] of Decimal;
-
     begin
         for I := 1 to 1000 do
             Total[I] := I * 3;
