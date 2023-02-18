@@ -24,5 +24,7 @@ permissionset 50600 "KNH _GenDev_Perms"
         tableData "KNH Note" = RIMD,
         page "KNH Notes" = X,
         table "KNH API" = X,
-        tableData "KNH API" = RIMD;
+        tableData "KNH API" = RIMD,
+        table "KNH Source" = X,
+        tableData "KNH Source" = RIMD;
 }
