@@ -1,13 +1,13 @@
 /// <summary>
-/// PageExtension NEU Sales Order (ID 50600) extends Record Sales Order.
+/// PageExtension "KNH_SalesOrder" (ID 50600) extends Record Sales Order.
 /// </summary>
-pageextension 50600 "KNH Sales Order" extends "Sales Order"
+pageextension 50600 "KNH_SalesOrder" extends "Sales Order"
 {
     actions
     {
         addfirst(Processing)
         {
-            action(ShowJson)
+            action(KNH_ShowJson)
             {
                 Caption = 'Show Json';
                 Tooltip = 'Show Json';

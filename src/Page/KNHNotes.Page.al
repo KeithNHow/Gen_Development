@@ -1,12 +1,12 @@
 /// <summary>
-/// Page KNH Notes List (ID 50601).
+/// Page KNH_Notes List (ID 50601).
 /// </summary>
-page 50601 "KNH Notes"
+page 50601 "KNH_Notes"
 {
     ApplicationArea = All;
     Caption = 'Notes List';
     PageType = List;
-    SourceTable = "KNH Note";
+    SourceTable = "KNH_Note";
     UsageCategory = Lists;
 
     layout

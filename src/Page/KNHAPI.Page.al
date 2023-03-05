@@ -1,11 +1,11 @@
 /// <summary>
-/// Page KNH API (ID 50602).
+/// Page KNH_API (ID 50602).
 /// </summary>
-page 50602 "KNH API"
+page 50602 "KNH_API"
 {
     Caption = 'KNH API';
     PageType = Card;
-    SourceTable = "KNH API";
+    SourceTable = "KNH_API";
     ApplicationArea = ALL;
     UsageCategory = Lists;
 

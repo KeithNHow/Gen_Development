@@ -1,8 +1,8 @@
 /// <summary>
-/// Codeunit KNH Copy Test (ID 50601).
+/// Codeunit "KNH_CopyTest (ID 50601).
 /// Copies a specified record's filters, views, automatically calculated FlowFields, marks, fields, and keys.
 /// </summary>
-codeunit 50601 "KNH Copy Test"
+codeunit 50601 "KNH_CopyTest"
 {
     trigger OnRun()
     begin

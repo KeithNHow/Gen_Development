@@ -11,7 +11,7 @@
 /// 8. UpdateAuditFields([Boolean]) - Sets if audit fields should be updated. If the value is set to false, the audit fields are not updated when calling the CopyFields method. Default value is true. This method is supported only in Business Central on-premises.
 /// </summary>
 
-codeunit 50618 "KNH DataTransfer"
+codeunit 50618 "KNH_DataTransfer"
 {
     /*
     trigger OnRun()

@@ -6,7 +6,7 @@
 /// pragma directive - gives the compiler special inst for the compile of the file in which it appears. 
 /// 
 /// </summary>
-codeunit 50613 "KNH Preprocessor Directives"
+codeunit 50613 "KNH_PreprocessorDirectives"
 {
 #if DEBUG //preprocessor directive
     trigger OnOpenPage()

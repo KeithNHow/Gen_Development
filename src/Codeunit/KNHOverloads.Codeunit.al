@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit "Overloads" (ID 50604) import text, date or integer, export text.
+/// Codeunit "KNH_Overloads" (ID 50604) import text, date or integer, export text.
 /// </summary>
-codeunit 50604 "KNH Overloads"
+codeunit 50604 "KNH_Overloads"
 {
     trigger OnRun()
     begin

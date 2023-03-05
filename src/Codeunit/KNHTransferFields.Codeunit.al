@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit KNH TransferFields (ID 50608).
+/// Codeunit "KNH TransferFields" (ID 50608).
 /// </summary>
-codeunit 50608 "KNH TransferFields"
+codeunit 50608 "KNH_TransferFields"
 {
     trigger OnRun()
     begin

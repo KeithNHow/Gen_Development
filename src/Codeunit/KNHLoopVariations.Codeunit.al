@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit KNH Loop Variations (ID 50605).
+/// Codeunit "KNH Loop Variations" (ID 50605).
 /// </summary>
-codeunit 50605 "KNH Loop Variations"
+codeunit 50605 "KNH_LoopVariations"
 {
     var
         Customer: Record Customer;

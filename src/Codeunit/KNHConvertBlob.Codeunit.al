@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit KNH Convert Blob (ID 50616).
+/// Codeunit "KNH Convert Blob" (ID 50616).
 /// </summary>
-codeunit 50616 "KNH Convert Blob"
+codeunit 50616 "KNH_ConvertBlob"
 {
     TableNo = "Company Information";
 

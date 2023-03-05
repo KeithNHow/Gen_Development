@@ -1,8 +1,8 @@
 /// <summary>
-/// Codeunit KNH Variant Test (ID 50600).
+/// Codeunit KNH_VariantTest (ID 50600).
 /// The AL variant data type can contain many AL data types.
 /// </summary>
-codeunit 50600 "KNH Variant Test"
+codeunit 50600 "KNH_VariantTest"
 {
     trigger OnRun()
     begin

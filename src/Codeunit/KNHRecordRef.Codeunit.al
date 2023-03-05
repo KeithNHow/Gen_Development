@@ -1,9 +1,9 @@
 /// <summary>
-/// Codeunit KNH RecordRef (ID 50611).
+/// Codeunit KNH_RecordRef (ID 50611).
 /// RecordRef - References a record in a table.
 /// RecordID - Contains the table number and the primary key of a table.
 /// </summary>
-codeunit 50611 "KNH RecordRef"
+codeunit 50611 "KNH_RecordRef"
 {
     trigger OnRun()
     begin
@@ -83,7 +83,7 @@ codeunit 50611 "KNH RecordRef"
     var
         Opportunity: Record Opportunity;
         RecordLink: Record "Record Link";
-        KNHNote: Record "KNH Note";
+        KNHNote: Record "KNH_Note";
         OppRecordRef: RecordRef;
         MyInStream: InStream;
         LongText: Text;

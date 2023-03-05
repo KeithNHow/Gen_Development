@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit KNH Selectuion (ID 50603).
+/// Codeunit "KNH_Selection" (ID 50603).
 /// </summary>
-codeunit 50603 "KNH Selection"
+codeunit 50603 "KNH_Selection"
 {
     var
         I: Integer;

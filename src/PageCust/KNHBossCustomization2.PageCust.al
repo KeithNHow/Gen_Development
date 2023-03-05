@@ -1,7 +1,7 @@
 /// <summary>
-/// Unknown "BossCustomization2".
+/// PageCust "KNH_BossCustomization2".
 /// </summary>
-pagecustomization "Boss Customization 2" customizes "Customer Card"
+pagecustomization "KNH_BossCustomization2" customizes "Customer Card"
 {
     layout
     {

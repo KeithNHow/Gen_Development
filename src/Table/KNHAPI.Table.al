@@ -1,7 +1,7 @@
 /// <summary>
 /// Table KNH API (ID 50601).
 /// </summary>
-table 50601 "KNH API"
+table 50601 "KNH_API"
 {
     Caption = 'KNH API';
     DataClassification = ToBeClassified;

@@ -1,11 +1,11 @@
 /// <summary>
-/// Codeunit "KNH ErrorHandling" (ID 50614).
+/// Codeunit "KNH Error Handling" (ID 50614).
 ///ClearLastError Method	    Removes the last error message from memory.
 ///GetLastErrorCode Method	    Gets the classification of the last error that occurred.
 ///GetLastErrorObject Method	Gets the last System.Exception object that occurred.
 ///GetLastErrorText Method	    Gets the last error that occurred in the debugger.
 /// </summary>
-codeunit 50614 "KNH Error Handling"
+codeunit 50614 "KNH_ErrorHandling"
 {
     var
         SalesInvoiceHeader: Record "Sales Invoice Header";

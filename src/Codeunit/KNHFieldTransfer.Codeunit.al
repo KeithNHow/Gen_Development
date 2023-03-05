@@ -1,7 +1,7 @@
 /// <summary>
 /// Codeunit "KNH FieldTransfer" (ID 50617).
 /// </summary>
-codeunit 50617 "KNH FieldTransfer"
+codeunit 50617 "KNH_FieldTransfer"
 {
     trigger OnRun()
     var
