@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Microsoft cloud sandbox",
+            "name": "Gen_Development",
             "request": "launch",
             "type": "al",
             "environmentType": "Production",
