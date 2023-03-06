@@ -8,10 +8,12 @@
 /// </summary>
 codeunit 50613 "KNH_PreprocessorDirectives"
 {
-#if DEBUG //preprocessor directive
-    trigger OnOpenPage()
+#if Debug //Compiler directive
+    trigger OnRun()
     begin
+    #region - Region directive
         Message('Only in debug versions');
+    #endregion
     end;
 #endif
 }
