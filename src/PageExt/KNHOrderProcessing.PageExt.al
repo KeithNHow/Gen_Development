@@ -5,9 +5,9 @@ pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
 {
     actions
     {
-        addAfter("History")
+        addafter("History")
         {
-            action(KNH_OverLoad) //604
+            action(KNH_OverLoad)
             {
                 ApplicationArea = All;
                 ToolTip = 'OverLoad';
@@ -17,7 +17,7 @@ pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
         }
         addafter(KNH_OverLoad)
         {
-            action("KNH_Copy Test") //601
+            action("KNH_Copy Test")
             {
                 ApplicationArea = All;
                 ToolTip = 'Copy Test';
@@ -27,7 +27,7 @@ pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
         }
         addafter("KNH_Copy Test")
         {
-            action(KNH_Dictionary) //607
+            action(KNH_Dictionary)
             {
                 ApplicationArea = All;
                 ToolTip = 'Dictionary';
