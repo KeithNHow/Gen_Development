@@ -7,7 +7,7 @@ codeunit 50609 "KNH_SystemFunctions"
     var
         selection: Integer;
         options: Text;
-        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString';
+        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString,,ThisModule';
         selectionTxt: Label 'Choose one of the following options:';
     begin
         Options := functionTxt;
@@ -65,6 +65,8 @@ codeunit 50609 "KNH_SystemFunctions"
                 ReplaceText();
             26:
                 IncString();
+            27:
+                ThisModule();
             else
                 exit;
         end;
@@ -356,6 +358,13 @@ codeunit 50609 "KNH_SystemFunctions"
         MyString := 'AB000100X';
         MyString := IncStr(MyString);
         Message(MyString);
+    end;
+
+    local procedure ThisModule()
+    var
+        MyModule: ModuleInfo;
+    begin
+        Message(Format(MyModule.Name()));
     end;
 
     #endregion
