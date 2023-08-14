@@ -67,6 +67,8 @@ codeunit 50609 "KNH_SystemFunctions"
                 IncString();
             27:
                 ThisModule();
+            28:
+                StringSubstNo();
             else
                 exit;
         end;
@@ -124,7 +126,7 @@ codeunit 50609 "KNH_SystemFunctions"
         mySubstring: Text[50];
         myText: Text[50];
     begin
-        myText := 'Here we go again. Another difficult day.';
+        myText := 'Here we go again. Another day in paradis.';
         mySubstring := myText.Substring(12, 5);
         Message(mySubstring);
     end;
@@ -365,6 +367,23 @@ codeunit 50609 "KNH_SystemFunctions"
         MyModule: ModuleInfo;
     begin
         Message(Format(MyModule.Name()));
+    end;
+
+    local procedure StringSubStNo()
+    var
+        Str: Text[1024];
+        AccountNo: Integer;
+        Balance: Decimal;
+        Text0Txt: Label 'The balance of account %1 is $ %2', Comment = '%1 = AcNo, %2 = Balance, %3 = Str';
+        Text1Txt: Label 'The test string before StrSubstNo is called:\\%1', Comment = '%1 = Str';
+        Text2Txt: Label 'The string after StrSubstNo is called:\\%1', Comment = '%1 = ';
+    begin
+        Str := Text0Txt;
+        AccountNo := 3452;
+        Balance := 2345 + 5462;
+        Message(Text1Txt, Str);
+        Str := StrSubStNo(Str, AccountNo, Balance);
+        Message(Text2Txt, Str);
     end;
 
     #endregion
