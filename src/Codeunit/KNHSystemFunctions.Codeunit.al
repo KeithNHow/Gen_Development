@@ -7,7 +7,7 @@ codeunit 50609 "KNH_SystemFunctions"
     var
         selection: Integer;
         options: Text;
-        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString,,ThisModule';
+        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString,,ThisModule,StringSubstNo,PopFilter';
         selectionTxt: Label 'Choose one of the following options:';
     begin
         Options := functionTxt;
@@ -69,6 +69,8 @@ codeunit 50609 "KNH_SystemFunctions"
                 ThisModule();
             28:
                 StringSubstNo();
+            29:
+                PopFilter();
             else
                 exit;
         end;
@@ -384,6 +386,21 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Text1Txt, Str);
         Str := StrSubStNo(Str, AccountNo, Balance);
         Message(Text2Txt, Str);
+    end;
+
+    local procedure PopFilter()
+    var
+        Item: Record Item;
+        StartDate: Date;
+        EndDate: Date;
+        DateText: Text;
+
+    begin
+        StartDate := 20230701D;
+        EndDate := 20230731D;
+        DateText := Format(StartDate) + '..' + Format(EndDate);
+        Evaluate(Item."Date Filter", DateText);
+        Message(Format(Item."Date Filter"));
     end;
 
     #endregion

@@ -6,7 +6,7 @@ page 50601 "KNH_Notes"
     ApplicationArea = All;
     Caption = 'Notes List';
     PageType = List;
-    SourceTable = "KNH_Note";
+    SourceTable = "KNHNote";
     UsageCategory = Lists;
 
     layout

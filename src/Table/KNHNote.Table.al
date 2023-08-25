@@ -1,9 +1,9 @@
 /// <summary>
-/// Table KNH_Note (ID 50600).
+/// Table KNH Note (ID 50600).
 /// </summary>
-table 50600 "KNH_Note"
+table 50600 "KNHNote"
 {
-    Caption = 'KNH_Notes';
+    Caption = 'KNH Notes';
     DataClassification = ToBeClassified;
 
     fields

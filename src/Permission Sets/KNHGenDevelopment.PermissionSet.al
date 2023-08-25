@@ -20,7 +20,11 @@ permissionset 50600 "KNH_GenDevelopment"
         codeunit "KNH_RecordRef" = X,
         codeunit "KNH_Letters" = X,
         codeunit "KNH_PreprocessorDirectives" = X,
-        table "KNH_Note" = X,
-        tableData "KNH_Note" = RIMD,
+        table "KNHNote" = X,
+        table "KNHSource" = X,
+        table "KNHSourceLine" = X,
+        tableData "KNHNote" = RIMD,
+        tableData "KNHSource" = RIMD,
+        tableData "KNHSourceLine" = RIMD,
         page "KNH_Notes" = X;
 }
