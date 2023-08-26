@@ -83,7 +83,7 @@ codeunit 50611 "KNH_RecordRef"
     var
         Opportunity: Record Opportunity;
         RecordLink: Record "Record Link";
-        KNHNote: Record "KNHNote";
+        KNHNote: Record "KNH_Note";
         OppRecordRef: RecordRef;
         MyInStream: InStream;
         LongText: Text;

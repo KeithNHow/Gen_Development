@@ -2,18 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Gen_Development",
+            "name": "GenDev",
             "request": "launch",
             "type": "al",
-            "environmentType": "Production",
-            "environmentName": "Production",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/BC200/",
+            "serverInstance": "BC200",
+            "authentication": "Windows",
             "startupObjectId": 2500,
             "startupObjectType": "Page",
-            "breakOnError": "All",
+            "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "tenant": "4a94f826-0a72-47e5-869d-d554fa01b7ec"
+            "port": 7049,
+            "tenant": "default",
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

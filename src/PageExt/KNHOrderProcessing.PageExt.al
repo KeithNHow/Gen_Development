@@ -1,5 +1,5 @@
 /// <summary>
-/// PageExt "KNH_OrderProcessing" extends Order Processor Role Center 9006
+/// PageExt "KNH OrderProcessing" extends Order Processor Role Center 9006
 /// </summary>
 pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
 {
@@ -83,6 +83,26 @@ pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
                 ToolTip = 'Notes';
                 Caption = 'Notes';
                 RunObject = Page "KNH_Notes";
+            }
+        }
+        addafter(KNH_Notes)
+        {
+            action(KNH_Source)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Open sources page.';
+                Caption = 'Sources';
+                RunObject = Page KNH_Sources;
+            }
+        }
+        addafter(KNH_Source)
+        {
+            action(KNH_Rename)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Rename';
+                Caption = 'Rename';
+                RunObject = Codeunit KNH_Rename;
             }
         }
     }

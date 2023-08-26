@@ -1,9 +1,9 @@
 /// <summary>
 /// Table "KNH Source Lines" (ID 50601).
 /// </summary>
-table 50601 "KNHSourceLine"
+table 50601 "KNH_SourceLine"
 {
-    Caption = 'KNHSourceLines';
+    Caption = 'Source Lines';
     DataClassification = CustomerContent;
 
     fields
@@ -26,9 +26,15 @@ table 50601 "KNHSourceLine"
     }
     keys
     {
-        key(PK; "Code", "Source Code")
+        key(PK; Code, "Source Code")
         {
             Clustered = true;
+        }
+    }
+    fieldgroups
+    {
+        fieldgroup(DropDown; Code, Description)
+        {
         }
     }
 }
