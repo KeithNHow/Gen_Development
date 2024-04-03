@@ -2,22 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GenDev",
+            "name": "Style",
             "request": "launch",
             "type": "al",
-            "environmentType": "OnPrem",
-            "server": "http://localhost:8080/BC200/",
-            "serverInstance": "BC200",
-            "authentication": "Windows",
+            "environmentType": "Production",
+            "environmentName": "Production",
             "startupObjectId": 2500,
             "startupObjectType": "Page",
-            "breakOnError": true,
+            "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true,
-            "port": 7049,
-            "tenant": "default",
-            "schemaUpdateMode": "ForceSync"
+            "enableSqlInformationDebugger": true
         }
     ]
 }

@@ -7,7 +7,7 @@ codeunit 50609 "KNH_SystemFunctions"
     var
         selection: Integer;
         options: Text;
-        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString,,ThisModule,StringSubstNo';
+        functionTxt: Label 'DateFromDateTime,TimeFromDateTime,DWYtoDate,EncryptText,Substring,Trim,Replace,PadRight,InsertString,RandomizeNumber,RoundingNumber,Evaluation,FormatDateInteger,FormatDateText,FormatDateText2,CopyString,ShowMessage,StrPosition,StrLength,CalculateDate,CreateGUID,DateToDMY,MyError,MyLastError,ReplaceText,IncString,ThisModule,StringSubstNo,FindCustomer';
         selectionTxt: Label 'Choose one of the following options:';
     begin
         Options := functionTxt;
@@ -69,12 +69,15 @@ codeunit 50609 "KNH_SystemFunctions"
                 ThisModule();
             28:
                 StringSubstNo();
+            29:
+                FindCustomer()
             else
                 exit;
         end;
     end;
 
     #region
+    //1
     local procedure DatefromDateTime()
     var
         myDate: Date;
@@ -85,6 +88,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(myDate));
     end;
 
+    //2
     local procedure TimefromDateTime()
     var
         myTime: Time;
@@ -95,6 +99,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(myTime));
     end;
 
+    //3
     local procedure DWYtoDate()
     var
         myDate: Date;
@@ -102,13 +107,14 @@ codeunit 50609 "KNH_SystemFunctions"
         week: Integer;
         year: Integer;
     begin
-        day := 12;
+        day := 5; //permitted range 1 -7
         week := 23;
-        year := 2019;
+        year := 2023;
         myDate := System.DWY2Date(day, week, year);
         Message(Format(myDate));
     end;
 
+    //4
     local procedure EncryptText()
     var
         myText: Text;
@@ -121,6 +127,7 @@ codeunit 50609 "KNH_SystemFunctions"
     #endregion
 
     #region
+    //5
     local procedure SubString()
     var
         mySubstring: Text[50];
@@ -131,6 +138,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(mySubstring);
     end;
 
+    //6
     local procedure Trim()
     var
         myExtract: Text;
@@ -141,6 +149,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(myExtract);
     end;
 
+    //7
     local procedure Replace()
     var
         oldText: Text;
@@ -153,6 +162,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(newText);
     end;
 
+    //8
     local procedure PadRight()
     var
         Result: Text;
@@ -162,6 +172,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Result);
     end;
 
+    //9
     local procedure InsertString()
     var
         oldString: Text;
@@ -180,6 +191,7 @@ codeunit 50609 "KNH_SystemFunctions"
 
     #region
 
+    //10
     local procedure RandomizeNumber()
     var
         Number: Integer;
@@ -192,18 +204,20 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(Number));
     end;
 
+    //11
     local procedure RoundingNumber()
     var
         myNumber: Decimal;
     begin
         myNumber := Round(50.3468, 0.01, '<');
         Message(Format(myNumber)); //Ans = 50.34
-        myNumber := ROUND(50.3468, 0.01, '>');
+        myNumber := Round(50.3468, 0.01, '>');
         Message(Format(myNumber)); //Ans = 50.35
-        myNumber := ROUND(50.3468, 0.01);
+        myNumber := Round(50.3468, 0.01);
         Message(Format(myNumber)); //Ans = 50.34    
     end;
 
+    //12
     local procedure Evaluation()
     var
         myNumber: Integer;
@@ -215,8 +229,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message('The date is - ' + Format(MyDate)); //convert back to string
     end;
 
-    //Format(Value: Any [, Length: Integer] [, FormatNumber: Integer])
-    //FormatNumber --> 0,1,2,3,4,9
+    //13
     local procedure FormatDateInteger()
     var
         myDate: Date;
@@ -230,26 +243,24 @@ codeunit 50609 "KNH_SystemFunctions"
         //2022-04-15T11:05:40
     end;
 
-    //Format(Value: Any, Length: Integer, FormatString: Text)
-    //if Length = 0 then the entire value is returned (default).
-    //if Length > 0 then the returned string will be exactly Length characters.
-    //If Length < 0 then the returned string will not have leading or trailing spaces.
+    //14
     local procedure FormatDateText()
     var
         myDate: Date;
 
     begin
-        myDate := 20220415D;
-        Message(Format(myDate, 0, '<Month Text> <Day> <Year, 4>'));
+        myDate := WorkDate();
+        Message(Format(myDate, 0, '<WeekDay Text> <Month Text> <Year4>'));
         //April 15 2022
     end;
 
+    //15
     local procedure FormatDateText2()
     var
         myDate: Date;
     begin
-        myDate := 20220415D;
-        Message(Format(myDate, 0, '<Year, 4> <Month> <Weekday Text> <Day>'));
+        myDate := WorkDate();
+        Message(Format(myDate, 0, '<Day>/<Month>/<Year4>'));
         //2022 04 Friday 15
     end;
 
@@ -257,6 +268,7 @@ codeunit 50609 "KNH_SystemFunctions"
 
     #region
 
+    //16
     local procedure CopyString()
     var
         newString: Text;
@@ -265,6 +277,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(newString); //Copies characters 'very'
     end;
 
+    //17
     local procedure ShowMessage()
     var
         ShowTxt: Label 'Code is running on a client.';
@@ -273,6 +286,7 @@ codeunit 50609 "KNH_SystemFunctions"
             Message(ShowTxt);
     end;
 
+    //18
     local procedure StrPosition()
     var
         Pos: Integer;
@@ -283,6 +297,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(Pos)); //Searches str for matching character.
     end;
 
+    //19
     local procedure StrLength()
     var
         Len: Integer;
@@ -297,6 +312,7 @@ codeunit 50609 "KNH_SystemFunctions"
 
     #region
 
+    //20
     local procedure CalculateDate()
     var
         MyDate: Date;
@@ -305,6 +321,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(MyDate));
     end;
 
+    //21
     local procedure CreateGUID()
     var
         myGuid: Guid;
@@ -313,6 +330,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(myGuid));
     end;
 
+    //22
     local procedure DateToDMY()
     var
         inputDate: Date;
@@ -328,17 +346,20 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(myTxt, Day, Month, Year);
     end;
 
+    //23
     local procedure MyError()
     begin
         Error('My codeunit does not work.');
     end;
 
+    //24
     local procedure MyLastError()
     begin
         ClearLastError();
         Message('The last error was error code: ' + GetLastErrorCode() + ' error text ' + GetLastErrorText());
     end;
 
+    //25
     local procedure ReplaceText()
     var
         Description: text[100];
@@ -353,6 +374,7 @@ codeunit 50609 "KNH_SystemFunctions"
         //Result = 'myXmyXmyXmyX';
     end;
 
+    //26
     local procedure IncString()
     var
         MyString: Text;
@@ -362,6 +384,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(MyString);
     end;
 
+    //27
     local procedure ThisModule()
     var
         MyModule: ModuleInfo;
@@ -369,6 +392,7 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Format(MyModule.Name()));
     end;
 
+    //28
     local procedure StringSubStNo()
     var
         Str: Text[1024];
@@ -384,6 +408,27 @@ codeunit 50609 "KNH_SystemFunctions"
         Message(Text1Txt, Str);
         Str := StrSubStNo(Str, AccountNo, Balance);
         Message(Text2Txt, Str);
+    end;
+
+    //29
+    local procedure FindCustomer()
+    var
+        Customer: Record Customer;
+        FirstRecord: Code[20];
+        LastRecord: Code[20];
+        Counter: Integer;
+        FindCustomerMsg: Label 'First customer record %1, Last customer record %2', Comment = '%1 = FirstRecord, %2 = Last Record';
+    begin
+        Counter := 0;
+        if Customer.Find('+') then
+            repeat
+                if Counter = 0 then begin
+                    FirstRecord := Customer."No.";
+                    Counter := 1;
+                end;
+            until Customer.Next(-1) = 0;
+        LastRecord := Customer."No.";
+        Message(FindCustomerMsg, FirstRecord, LastRecord);
     end;
 
     #endregion

@@ -105,5 +105,45 @@ pageextension 50601 "KNH_OrderProcessing" extends "Order Processor Role Center"
                 RunObject = Codeunit KNH_Rename;
             }
         }
+        addafter(KNH_Rename)
+        {
+            action(KNH_SendEmail)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Send Email';
+                Caption = 'Send Email';
+                RunObject = Codeunit KNH_SendEmail;
+            }
+        }
+        addafter(KNH_SendEmail)
+        {
+            action(KNH_ErrorLog)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Error Log';
+                Caption = 'Error Log';
+                RunObject = Codeunit KNH_ErrorLog;
+            }
+        }
+        addafter(KNH_ErrorLog)
+        {
+            action(KNH_ChangeCompany)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Change Company';
+                Caption = 'Change Company';
+                RunObject = Codeunit KNH_ChangeCompany;
+            }
+        }
+        addafter(KNH_ChangeCompany)
+        {
+            action(KNH_MarkedCustomers)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Marked Customers';
+                Caption = 'Marked Customers';
+                RunObject = Codeunit KNH_MarkedCustomers;
+            }
+        }
     }
 }

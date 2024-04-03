@@ -8,15 +8,15 @@ codeunit 50617 "KNH_FieldTransfer"
         SalesHeader: Record "Sales Header";
         SalesInvoiceHeader: Record "Sales Invoice Header";
         NoSeries: Record "No. Series";
-        SalesSetup: Record "Sales & Receivables Setup";
-        NoSeriesMgmt: Codeunit NoSeriesManagement;
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
     begin
         SalesHeader.SetRange(Invoice);
         if SalesHeader.FindSet() then begin
-            NoSeries.Get(SalesSetup."Invoice Nos.");
+            NoSeries.Get(SalesReceivablesSetup."Invoice Nos.");
             repeat
                 SalesInvoiceHeader.Init();
-                SalesInvoiceHeader."No." := NoSeriesMgmt.GetNextNo(SalesSetup."Invoice Nos.", WorkDate(), true);
+                SalesInvoiceHeader."No." := NoSeriesManagement.GetNextNo(SalesReceivablesSetup."Invoice Nos.", WorkDate(), true);
                 SalesInvoiceHeader.TransferFields(SalesHeader, false);
                 SalesInvoiceHeader.Insert();
             until SalesHeader.Next() = 0;
